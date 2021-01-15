@@ -6,6 +6,9 @@ Created on Wed Dec 23 08:59:41 2020
 @File type: Spyder (Python 3.7)
 @Description: To solve question #2750 from Baekjoon
               using quick sort algorithm.
+@Note: Algorithms for partition and quickSort functions are
+       deriven from GeeksfoGeeks 
+       (https://www.geeksforgeeks.org/python-program-for-quicksort/)
 """
 import sys
 sys.setrecursionlimit(99999)
@@ -29,7 +32,6 @@ def quickSort(arr, low, high):
         pi = partition(arr, low, high)
         quickSort(arr, low, pi-1)
         quickSort(arr, pi+1, high)
-
 
 n=int(sys.stdin.readline())
 stack = []
