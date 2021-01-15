@@ -1,0 +1,18 @@
+#https://programmers.co.kr/learn/courses/30/lessons/42587?language=python3
+
+def solution(priorities, location):
+    answer = 0
+    while(priorities):
+        max_ = max(priorities)
+        if(priorities[0]!=max_):
+            priorities.append(priorities.pop(0))
+            location-=1
+            if(location<0):
+                location = len(priorities)-1
+        else:
+            priorities.pop(0)
+            answer+=1
+            location-=1
+            if(location < 0):
+                return answer
+    return answer
