@@ -1,0 +1,17 @@
+def solution(skill, skill_trees):
+    answer = 0
+    for tree in skill_trees:
+        correct = True
+        idx = -1
+        last = -1
+        for t in tree:
+            if t in skill:
+                idx = skill.find(t)
+                if last<=idx and idx-last<=1:
+                    last = idx
+                else:
+                    correct = False
+                    break
+        if correct:
+            answer+=1
+    return answer
